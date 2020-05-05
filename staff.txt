@@ -1,0 +1,10 @@
+User1;
+username1 = kyloren
+password1 = 12345
+Email: monyeijosh01@gmail.com
+Fullname: Joshua Monyei
+User2;
+username2: xyluz
+password2: 54321
+Email: startng@gmail.com
+Fullname: Xylus HNG
