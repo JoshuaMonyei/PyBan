@@ -1,4 +1,6 @@
 def root():
+    import json
+    import os
     login_page = input("""what would you like to do? 
                         1. Staff login 
                         2. Close App: """).lower()
@@ -6,10 +8,14 @@ def root():
         username = input("Please input your username: ")
         password = input("Please input your password: ")
         # opening staff.txt file to verify user input
-        file = open('staff.txt', 'r')
-        if file.read().__contains__(username and password):
+        with open('staff.txt', 'r') as f_obj:
+            staff_details = json.load(f_obj)
+        if username == (staff_details['Staff1']['username']) and password == (
+                staff_details['Staff1']['password']) or \
+                username == (staff_details['Staff2']['username']) and password == (
+                staff_details['Staff2']['password']):
             print("Login Successful")
-            file.close()
+            home_page()
         else:
             print("Incorrect username or password")
             root()
@@ -66,4 +72,3 @@ def home_page():
 
 
 root()
-home_page()
